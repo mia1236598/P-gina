@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTEMIS | Colección y Diseños Exclusivos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">ARTEMIS</a>
+
+        <ul class="nav-links">
+            <li><a href="index.html#beneficios">Beneficios</a></li>
+            <li><a href="index.html#simulador">Simulador SOS</a></li>
+            <li><a href="disenos.html" class="active">Diseños</a></li>
+            <li><a href="index.html#app">Aplicación</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <a href="cuenta.html" class="icon-btn">
+                <i class="fa-regular fa-user"></i>
+                <span>Mi cuenta</span>
+            </a>
+
+            <a href="carrito.html" class="cart-btn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<!-- Cabecera del Catálogo -->
+<section class="catalog-header">
+    <span class="tagline">Colección Exclusiva 2026</span>
+    <h1>Nuestros Diseños</h1>
+    <p>Cada pieza ha sido tallada con metales de primera calidad, fusionando la alta joyería con la tecnología de protección inteligente.</p>
+</section>
+
+<!-- Catálogo de Joyería -->
+<section class="catalog-section">
+    <!-- Filtros por categoría -->
+    <div class="catalog-filters">
+        <button class="filter-btn active" onclick="filterCategory('todos')">Todos</button>
+        <button class="filter-btn" onclick="filterCategory('dijes')">Dijes / Colgantes</button>
+        <button class="filter-btn" onclick="filterCategory('pulseras')">Pulseras</button>
+        <button class="filter-btn" onclick="filterCategory('anillos')">Ediciones Especiales</button>
+    </div>
+
+    <!-- Rejilla de Productos -->
+    <div class="product-grid">
+        <!-- Producto 1 -->
+        <div class="product-card" data-category="dijes">
+            <div class="product-badge">Más Popular</div>
+            <img src="artemis-oro.png" alt="Dije Artemis Clásico Oro">
+            <h3>ARTEMIS Classic Gold</h3>
+            <p class="finish-label">Chapeado en Oro 24K</p>
+            <span class="price">$2,499 MXN</span>
+            <div class="product-actions">
+                <a href="#" class="btn-primary">Ver Detalle</a>
+                <a href="#" class="btn-secondary"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card" data-category="dijes">
+            <img src="artemis-rosa.png" alt="Dije Artemis Oro Rosa">
+            <h3>ARTEMIS Rose Elegance</h3>
+            <p class="finish-label">Oro Rosa de 18K</p>
+            <span class="price">$2,599 MXN</span>
+            <div class="product-actions">
+                <a href="#" class="btn-primary">Ver Detalle</a>
+                <a href="#" class="btn-secondary"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card" data-category="dijes">
+            <img src="artemis-plata.png" alt="Dije Artemis Plata">
+            <h3>ARTEMIS Silver Minimalist</h3>
+            <p class="finish-label">Plata Ley 925</p>
+            <span class="price">$2,199 MXN</span>
+            <div class="product-actions">
+                <a href="#" class="btn-primary">Ver Detalle</a>
+                <a href="#" class="btn-secondary"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product-card" data-category="pulseras">
+            <img src="pulsera-artemis.png" alt="Pulsera Artemis Luxe">
+            <h3>ARTEMIS Bracelet Luxe</h3>
+            <p class="finish-label">Eslabón Fino en Oro 24K</p>
+            <span class="price">$2,899 MXN</span>
+            <div class="product-actions">
+                <a href="#" class="btn-primary">Ver Detalle</a>
+                <a href="#" class="btn-secondary"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Personalizador interactivo en la página de diseños -->
+<section class="customizer-section">
+    <div class="section-header">
+        <span>PERSONALIZACIÓN</span>
+        <h2>Crea tu combinación perfecta</h2>
+    </div>
+
+    <div class="customizer-container">
+        <div class="customizer-preview">
+            <img src="artemis-oro.png" id="customizerImg" alt="Dije Personalizado">
+        </div>
+
+        <div class="customizer-controls">
+            <h3>Elige el acabado:</h3>
+            <div class="finish-options">
+                <button class="finish-btn active" onclick="setFinish('Oro 24K', 'artemis-oro.png')">
+                    <span class="color-swatch" style="background: #d4b77a;"></span> Oro 24K
+                </button>
+                <button class="finish-btn" onclick="setFinish('Oro Rosa', 'artemis-rosa.png')">
+                    <span class="color-swatch" style="background: #e0a996;"></span> Oro Rosa
+                </button>
+                <button class="finish-btn" onclick="setFinish('Plata Esterlina', 'artemis-plata.png')">
+                    <span class="color-swatch" style="background: #d1d5db;"></span> Plata Esterlina
+                </button>
+            </div>
+            <p class="finish-description" id="finishDesc">Elegancia clásica bañada en oro de 24 quilates con pulido espejo.</p>
+            <a href="#" class="btn-primary">Agregar al Carrito</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>ARTEMIS</h2>
+            <p>Diseños inteligentes que combinan elegancia, innovación y tranquilidad.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Explora</h3>
+            <ul>
+                <li><a href="index.html#beneficios">Beneficios</a></li>
+                <li><a href="disenos.html">Diseños</a></li>
+                <li><a href="index.html#app">Aplicación</a></li>
+                <li><a href="cuenta.html">Mi cuenta</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <p>✉ contacto@artemis.com</p>
+            <p>📍 Salamanca, Guanajuato</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Artemis. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
